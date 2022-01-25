@@ -1,0 +1,11 @@
+{
+  "jira-plugin.workingProject": "",
+  "eslint.format.enable": true,
+  "eslint.codeActionsOnSave.mode": "all",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "docthis.inlineOneLiners": false,
+  "docthis.includeAuthorTag": true,
+  "typescript.preferences.importModuleSpecifier": "shortest"
+}
