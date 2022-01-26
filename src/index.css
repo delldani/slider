@@ -8,36 +8,51 @@ body {
   background-color: brown;
   position: relative;
   perspective: 1500px;
-}
-
-.image-wrapper1 {
-  width: 600px;
-  height: 400px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transition: transform 1s;
-  box-shadow: 5px 5px 15px 5px #000000;
-  transform: translate3d(-200px, 0, -60px);
+  transform-style: preserve-3d;
 }
 
 .image-wrapper {
   width: 600px;
   height: 400px;
-  top: 50%;
-  left: 50%;
   position: absolute;
+  left: calc(50vw - 300px);
+  top: calc(50vh - 200px);
   transition: transform 1s;
   box-shadow: 5px 5px 15px 5px #000000;
 }
 
-.move {
-  transform: translate3d(200px, 0, -60px);
+.wr1 {
+  transform: translate3d(-200px, 0, 0);
 }
+.wr2 {
+  transform: translate3d(-400px, 0, 200px);
+  box-shadow: -4px 0px 15px 5px #000000;
+}
+.wr3 {
+  transform: translate3d(-200px, 0, 400px);
+  box-shadow: -2px 0px 15px 5px #000000;
+}
+.wr4 {
+  transform: translate3d(0, 0, 600px);
+  box-shadow: 0px 0px 15px 5px #000000;
+}
+.wr5 {
+  transform: translate3d(200px, 0, 400px);
+  box-shadow: 2px 0px 15px 5px #000000;
+}
+.wr6 {
+  transform: translate3d(400px, 0, 200px);
+  box-shadow: 4px 0px 15px 5px #000000;
+}
+.wr7 {
+  transform: translate3d(200px, 0, 0);
+}
+
 .image-wrapper > img,
 .image-wrapper1 > img {
-  width: 100%;
-  object-fit: contain;
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
 }
 
 .button-left,
