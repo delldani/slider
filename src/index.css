@@ -1,54 +1,55 @@
 body {
- margin:0;
+  margin: 0;
 }
 
-.App{
+.App {
   width: 100vw;
   height: 100vh;
-background-color: brown;
-position: relative;
-perspective: 1500px;
+  background-color: brown;
+  position: relative;
+  perspective: 1500px;
 }
 
-
-.image-wrapper1{
+.image-wrapper1 {
   width: 600px;
   height: 400px;
   position: absolute;
-  top:50%;
-  left:50%;
-  transition:  transform 1s;
-box-shadow:   5px 5px 15px 5px #000000;
-transform: translate3d(-200px,0,-60px);
+  top: 50%;
+  left: 50%;
+  transition: transform 1s;
+  box-shadow: 5px 5px 15px 5px #000000;
+  transform: translate3d(-200px, 0, -60px);
 }
 
-.image-wrapper{
+.image-wrapper {
   width: 600px;
   height: 400px;
-  top:50%;
-  left:50%;
+  top: 50%;
+  left: 50%;
   position: absolute;
-  transition:  transform 1s;
-box-shadow:   5px 5px 15px 5px #000000;
+  transition: transform 1s;
+  box-shadow: 5px 5px 15px 5px #000000;
 }
 
-.move{
-  transform: translate3d(200px,0,-60px);
+.move {
+  transform: translate3d(200px, 0, -60px);
 }
-.image-wrapper > img,.image-wrapper1 > img{
+.image-wrapper > img,
+.image-wrapper1 > img {
   width: 100%;
   object-fit: contain;
 }
 
-.button-left, .button-right{
+.button-left,
+.button-right {
   position: absolute;
-  top:50%;
+  top: 50%;
 }
 
-.button-left{
-  left:0;
+.button-left {
+  left: 0;
 }
 
-.button-right{
-  right:0;
+.button-right {
+  right: 0;
 }
