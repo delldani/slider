@@ -42,12 +42,15 @@ const images = [
     src: "https://images.unsplash.com/photo-1643130420763-964c891d218c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1145&q=80",
   },
 ];
-
+interface ImagesType {
+  id: string;
+  src: string;
+}
 const App = () => {
   const wasLeft = React.useRef(false);
   const wasTransistion = React.useRef(false);
   const [baseElements, setBaseElements] = React.useState(images.slice(0, 7));
-  const [elements, setElements] = React.useState(
+  const [pufferElements, setPufferElements] = React.useState(
     images.slice(7, images.length)
   );
 
@@ -65,21 +68,13 @@ const App = () => {
 
   const onTransitionEnd = () => {
     if (wasTransistion.current) {
-      const baseArray = [...baseElements];
-      const pufferArray = [...elements];
-      if (wasLeft.current) {
-        const lastBaseArray = baseArray.pop();
-        const lastPufferArray = pufferArray.pop();
-        baseArray.unshift(lastPufferArray!);
-        pufferArray.unshift(lastBaseArray!);
-      } else {
-        const firstBaseArray = baseArray.shift();
-        const firstPufferArray = pufferArray.shift();
-        baseArray.push(firstPufferArray!);
-        pufferArray.push(firstBaseArray!);
-      }
+      const { baseArray, pufferArray } = changeArrayElements(
+        baseElements,
+        pufferElements,
+        wasLeft.current
+      );
       setBaseElements(baseArray);
-      setElements(pufferArray);
+      setPufferElements(pufferArray);
       wasTransistion.current = false;
     }
   };
@@ -122,4 +117,25 @@ const moveCards = (direction: "left" | "right") => {
       element.classList.add("wr" + i.toString());
     }
   }
+};
+
+const changeArrayElements = (
+  base: ImagesType[],
+  puffer: ImagesType[],
+  wasLeft: boolean
+) => {
+  const baseArray = [...base];
+  const pufferArray = [...puffer];
+  if (wasLeft) {
+    const lastBaseArray = baseArray.pop();
+    const lastPufferArray = pufferArray.pop();
+    baseArray.unshift(lastPufferArray!);
+    pufferArray.unshift(lastBaseArray!);
+  } else {
+    const firstBaseArray = baseArray.shift();
+    const firstPufferArray = pufferArray.shift();
+    baseArray.push(firstPufferArray!);
+    pufferArray.push(firstBaseArray!);
+  }
+  return { baseArray, pufferArray };
 };
