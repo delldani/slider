@@ -27,22 +27,27 @@ body {
 .wr2 {
   transform: translate3d(-400px, 0, 200px);
   box-shadow: -4px 0px 15px 5px #000000;
+  filter: brightness(0.7);
 }
 .wr3 {
   transform: translate3d(-200px, 0, 400px);
   box-shadow: -2px 0px 15px 5px #000000;
+  filter: brightness(0.7);
 }
 .wr4 {
   transform: translate3d(0, 0, 600px);
   box-shadow: 0px 0px 15px 5px #000000;
+  filter: brightness(1.1);
 }
 .wr5 {
   transform: translate3d(200px, 0, 400px);
   box-shadow: 2px 0px 15px 5px #000000;
+  filter: brightness(0.7);
 }
 .wr6 {
   transform: translate3d(400px, 0, 200px);
   box-shadow: 4px 0px 15px 5px #000000;
+  filter: brightness(0.7);
 }
 .wr7 {
   transform: translate3d(200px, 0, 0);
