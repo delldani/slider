@@ -50,8 +50,8 @@ body {
 
 .image-wrapper > img,
 .image-wrapper1 > img {
-  width: 600px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
