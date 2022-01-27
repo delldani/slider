@@ -17,7 +17,7 @@ body {
   position: absolute;
   left: calc(50vw - 300px);
   top: calc(50vh - 200px);
-  transition: transform 1s;
+  transition: transform 1s, filter 1s;
   box-shadow: 5px 5px 15px 5px #000000;
 }
 
