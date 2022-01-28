@@ -12,11 +12,12 @@ body {
 }
 
 .image-wrapper {
-  width: 37.5em;
-  height: 25em;
+  width: 20em;
+  height: 30em;
+  overflow: hidden;
   position: absolute;
-  left: calc(50vw - 18.75em);
-  top: calc(50vh - 12.5em);
+  left: calc(50vw - 10em);
+  top: calc(50vh - 15em);
   transition: transform 1s, filter 1s;
   box-shadow: 5px 5px 15px 5px #000000;
 }
